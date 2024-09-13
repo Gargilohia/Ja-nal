@@ -1,0 +1,11 @@
+{
+  "name": "jaanal",
+  "version": "1.0.0",
+  "description": "makes journaling extremely easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Gargi",
+  "license": "ISC"
+}
