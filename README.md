@@ -1,6 +1,10 @@
-# Journal App
+# Ja-nal, a Journal App
 
-This is a simple journal application built with Flask for the backend and React for the frontend. Users can submit journal entries and retrieve all submitted entries.
+[Notion Page](https://www.notion.so/Ja-nal-Your-Daily-Journaling-Companion-128c90ab50dd80858f31f854d789f23b)
+Inspired by the Japanese katakana style, Ja-nal (ジャーナル) is a user-friendly journal app that brings a fresh twist to daily journaling. 
+The mission is to make journaling an enjoyable and engaging habit, encouraging users to reflect, grow, and track their moods every day.
+
+As of now it is a simple journal application built with Flask for the backend and React for the frontend. Users can submit journal entries and retrieve all submitted entries.
 
 ## Table of Contents
 
