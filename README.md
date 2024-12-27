@@ -89,7 +89,7 @@ cURL Request:
 1. Navigate to the frontend folder:
 
    ```bash
-   cd ja-nal/page/ja-nal
+   cd ja-nal/page
    ```
 
 2. Install the dependencies:
