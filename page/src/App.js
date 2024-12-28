@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [input, setInput] = useState('');
   const [journal, setJournal] = useState('');
+  let chatGptResponse = 'This is a response from GPT-3';
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -23,6 +24,12 @@ function App() {
           onChange={handleInputChange} 
           placeholder="Write your thoughts..." 
           className="input-area"
+        />
+        <textarea
+          value={chatGptResponse}
+          className='input-area'
+          inputMode='none'
+          readOnly
         />
         <button onClick={handleSubmit} className="submit-btn">Submit</button>
       </div>
