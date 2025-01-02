@@ -6,7 +6,7 @@ journal_entries = []
 
 @app.route('/submit_journal', methods=['POST'])
 def submit_journal():
-    data = request.json
+    data = request.get_json()
     journal_entry = data.get('entry', '')
 
     if not journal_entry:

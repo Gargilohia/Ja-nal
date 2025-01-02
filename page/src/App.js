@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { getJournalResponse } from './getResponse';
 
 function App() {
   const [input, setInput] = useState('');
@@ -12,8 +13,10 @@ function App() {
 
   const handleSubmit = () => {
     setJournal(input);
+    const res = getJournalResponse(journal);
+    console.log(res);
     setInput(''); 
-  };
+  }; 
 
   return (
     <div className="app-container">
