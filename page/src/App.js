@@ -12,9 +12,10 @@ function App() {
   };
 
   const handleSubmit = () => {
-    setJournal(input);
+    setJournal("Hmmm...");
     const res = getJournalResponse(journal);
     console.log(res);
+    setJournal(res.message);
     setInput(''); 
   }; 
 
