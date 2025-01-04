@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { getJournalResponse } from './getResponse';
 
 function App() {
   const [input, setInput] = useState('');
@@ -10,10 +11,18 @@ function App() {
     setInput(e.target.value);
   };
 
-  const handleSubmit = () => {
-    setJournal(input);
-    setInput(''); 
-  };
+  const handleSubmit = async () => {
+    setJournal("Hmmm...");
+    try {
+        const res = await getJournalResponse(input);
+        setJournal(res.message);
+    } catch (error) {
+        console.error(error);
+        setJournal('Error submitting journal');
+    }
+    setInput('');
+};
+
 
   return (
     <div className="app-container">
