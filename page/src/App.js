@@ -11,13 +11,18 @@ function App() {
     setInput(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setJournal("Hmmm...");
-    const res = getJournalResponse(journal);
-    console.log(res);
-    setJournal(res.message);
-    setInput(''); 
-  }; 
+    try {
+        const res = await getJournalResponse(input);
+        setJournal(res.message);
+    } catch (error) {
+        console.error(error);
+        setJournal('Error submitting journal');
+    }
+    setInput('');
+};
+
 
   return (
     <div className="app-container">
