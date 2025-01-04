@@ -1,6 +1,7 @@
+import { backend_url} from './config/urls.js';
 export const getJournalResponse = async (data) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/submit_journal', {
+      const response = await fetch(backend_url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
