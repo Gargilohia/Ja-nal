@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from fetch_journal_response import fetch_journal_response
 
 app = Flask(__name__)
 CORS(app)  
 
 @app.route('/submit_journal', methods=['OPTIONS', 'POST'])
-def submit_journal():
+async def submit_journal():
     if request.method == 'OPTIONS':
         response = jsonify({'message': 'CORS preflight passed'})
         response.headers.add('Access-Control-Allow-Origin', '*')
@@ -14,6 +15,9 @@ def submit_journal():
         return response
 
     elif request.method == 'POST':
+        data = request.get_json()
+        print(data)
+        response = await fetch_journal_response(data)
         return jsonify({'message': 'Journal submitted successfully'})
 
 if __name__ == '__main__':
