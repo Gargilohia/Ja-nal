@@ -6,7 +6,7 @@ import os
 
 load_dotenv()
 
-API_KEY = "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"
+API_KEY = os.getenv('API_KEY')
 
 async def fetch_journal_response(data):
     """Fetches the journal response for a given journal entry from an api endpoint.
