@@ -35,25 +35,6 @@ async def fetch_journal_response(data):
       "role": "assistant",
       "content": response.choices[0].message.content
     })
-    # Print the response
-    print("Assistant:", response.choices[0].message.content)
-
-
-    
-    data = {
-        "model": "llama-3.3-70b-versatile",
-        "messages": [{
-            "role": "user",
-            "content": data
-        }]
-    }
-    headers = {
-        'Authorization': 'Bearer `${API_KEY}`',
-        'Content-Type': 'application/json'
-    }
-    response = await requests.post('https://api.groq.com/openai/v1/chat/completions', json=data, headers=headers)
-    print(request)
-    print(response)
     # response = request.post('https://api.groq.com/openai/v1/chat/completions', json=data)
     # print(response)
     return {'message': 'Journal response fetched successfully'}
