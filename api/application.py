@@ -16,9 +16,8 @@ def submit_journal():
 
     elif request.method == 'POST':
         data = request.get_json()
-        print(data)
         response = fetch_journal_response(data)
-        return jsonify({'message': 'Journal submitted successfully'})
+        return jsonify(response)
 
 if __name__ == '__main__':
     app.run(port=5000)
