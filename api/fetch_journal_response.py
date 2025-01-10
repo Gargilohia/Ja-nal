@@ -8,7 +8,7 @@ from groq import Groq
 load_dotenv()
 
 
-async def fetch_journal_response(data):
+def fetch_journal_response(data):
     """Fetches the journal response for a given journal entry from an api endpoint.
 
     Args:
@@ -17,8 +17,7 @@ async def fetch_journal_response(data):
     Returns:
         A dictionary containing the journal response.
     """
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"), )
-    print("aaaaa", os.environ.get("GROQ_API_KEY"))
+    client = Groq(api_key= os.environ.get("GROQ_API_KEY"), )
     system_prompt = {
     "role": "system",
     "content":
@@ -35,7 +34,5 @@ async def fetch_journal_response(data):
       "role": "assistant",
       "content": response.choices[0].message.content
     })
-    # response = request.post('https://api.groq.com/openai/v1/chat/completions', json=data)
-    # print(response)
-    return {'message': 'Journal response fetched successfully'}
+    return {'message': response.choices[0].message.content}
 
