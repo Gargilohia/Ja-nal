@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  
 
 @app.route('/submit_journal', methods=['OPTIONS', 'POST'])
-async def submit_journal():
+def submit_journal():
     if request.method == 'OPTIONS':
         response = jsonify({'message': 'CORS preflight passed'})
         response.headers.add('Access-Control-Allow-Origin', '*')
@@ -16,9 +16,8 @@ async def submit_journal():
 
     elif request.method == 'POST':
         data = request.get_json()
-        print(data)
-        response = await fetch_journal_response(data)
-        return jsonify({'message': 'Journal submitted successfully'})
+        response = fetch_journal_response(data)
+        return jsonify(response)
 
 if __name__ == '__main__':
     app.run(port=5000)
