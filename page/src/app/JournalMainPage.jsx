@@ -12,6 +12,10 @@ function JournalMainPage() {
     };
   
     const handleSubmit = async () => {
+      if (input.trim() === '') {
+        alert('Input cannot be empty. Maybe write something.');
+        return;
+    }
       setJournal("Hmmm...");
       try {
           const res = await getJournalResponse(input);
