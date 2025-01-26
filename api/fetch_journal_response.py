@@ -27,9 +27,5 @@ def fetch_journal_response(data):
                                             messages=chat_history,
                                             max_tokens=MAX_TOKENS,
                                             temperature=TEMPERATURE)
-    chat_history.append({
-      "role": "assistant",
-      "content": response.choices[0].message.content
-    })
     return {'message': response.choices[0].message.content}
 
