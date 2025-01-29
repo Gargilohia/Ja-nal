@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from journal.journal_routes import journal_blueprint
+from api.journal.handle_submit_journal import journal_blueprint
 
 app = Flask(__name__)
 CORS(app)
