@@ -47,7 +47,7 @@ As of now it is a simple journal application built with Flask for the backend an
 4. Install the dependencies:
 
    ```bash
-   pip install Flask
+   pip install -r requirements.txt
    ```
    
 ### Running the Application
