@@ -1,20 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
-from fetch_journal_response import fetch_journal_response
-from handle_preflight_request import handle_preflight_request
+from journal.handle_submit_journal import journal_blueprint
 
 app = Flask(__name__)
-CORS(app)  
+CORS(app)
 
-@app.route('/submit_journal', methods=['OPTIONS', 'POST'])
-def submit_journal():
-    if request.method == 'OPTIONS':
-       return handle_preflight_request(request)
-
-    elif request.method == 'POST':
-        data = request.get_json()
-        response = fetch_journal_response(data)
-        return jsonify(response)
+# Register the blueprint
+app.register_blueprint(journal_blueprint, url_prefix='/journal')
 
 if __name__ == '__main__':
     app.run(port=5000)
